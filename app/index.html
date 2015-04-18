@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="base.app">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body ng-controller="UIController as ui">
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/velocity/velocity.js"></script>
+    <script src="/bower_components/hammerjs/hammer.js"></script>
+    <script src="/bower_components/angular-gestures/gestures.js"></script>
+
+    <script src="app.js"></script>
+
+    <section id="pane"
+             hm-tap="ui.tap($event)"
+             hm-pan="ui.pan($event)"
+             hm-pinch="ui.pinch($event)"
+            >
+        <div style="height: 2000px; width: 100%;background: blue;">A</div>
+    </section>
+
+    <script>
+        document.ontouchmove = function(event){
+            event.preventDefault();
+        }
+    </script>
+
+</body>
+</html>
